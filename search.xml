@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>使用自定义的ssh密钥连接github</title>
+      <link href="/2025/01/06/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84ssh%E5%AF%86%E9%92%A5%E8%BF%9E%E6%8E%A5github/"/>
+      <url>/2025/01/06/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84ssh%E5%AF%86%E9%92%A5%E8%BF%9E%E6%8E%A5github/</url>
+      
+        <content type="html"><![CDATA[<h2 id="新建一个ssh密钥"><a href="#新建一个ssh密钥" class="headerlink" title="新建一个ssh密钥"></a>新建一个ssh密钥</h2><pre><code>ssh-keygen -t rsa -C &quot;邮箱&quot; -f id_rsa_xx(密钥名)</code></pre><p>以id_rsa_test为例，运行后将会生成私钥id_rsa_test和公钥id_rsa_test.pub</p><h2 id="在github上添加ssh密钥"><a href="#在github上添加ssh密钥" class="headerlink" title="在github上添加ssh密钥"></a>在github上添加ssh密钥</h2><p>进入github，点击右侧的头像，选择settings<br>然后选择ssh key</p><p><img src="/2025/01/06/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84ssh%E5%AF%86%E9%92%A5%E8%BF%9E%E6%8E%A5github/1.png" alt="选择ssh key"></p><p>点击右侧的绿色按钮New SSH Key<br>Title随便起一个名字<br>Key Tpye不用修改</p><p>使用type id_rsa_test.pub查看公钥<br>复制并粘贴到github的Key中</p><h2 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h2><p>进入用户下的.ssh文件夹<br>创建一个config文件</p><pre><code>touch config</code></pre><p>编辑config文件</p><pre><code>Host github.comHostName github.comPreferredAuthentications publickeyIdentityFile C:\Users\用户名\.ssh\密钥名</code></pre><h2 id="确认"><a href="#确认" class="headerlink" title="确认"></a>确认</h2><p>使用ssh -T <a href="mailto:&#103;&#105;&#116;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#98;&#46;&#99;&#111;&#109;">git@github.com</a>来验证是否成功<br>如果显示：</p><p>Hi 用户名! You’ve successfully authenticated, but GitHub does not provide shell access.</p><p>说明成功</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> ssh密钥 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>test</title>
       <link href="/2025/01/05/test/"/>
       <url>/2025/01/05/test/</url>
